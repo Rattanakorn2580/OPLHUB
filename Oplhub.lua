@@ -58,6 +58,17 @@ end
 local drop = Section:NewDropdown("Select Mob", "Click To Select", Mob, function(t)
    _G.TPMob = t
 end)
+
+spawn(function()
+while wait() do
+            pcall(function()
+                    if _G.TPMob then
+game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:FindChildren("Workspace").Enemies[Select].HumanoidRootPart.CFrame 
+                * New.CFrame(0,0-5)
+            end
+        end)
+    end
+    end)
 Section:NewToggle("Auto Farm", "", function(t)
     _G.TPMob = t
 end)
