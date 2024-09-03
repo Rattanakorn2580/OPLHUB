@@ -59,11 +59,11 @@ Section:NewToggle("Hitbox Mob", "hitbox mob", function(v)
     end)
 
 spawn(function()
-if _G.AngryBob then
 while wait() do
-pcall(function()
+            pcall(function()
+                    if _G.AngryBob then
 game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies["Lv2 Angry Bob"].HumanoidRootPart.CFrame 
-                 New.CFrame(0,0,-5)
+                * New.CFrame(0,0,-5)
             end
         end)
     end
