@@ -61,7 +61,7 @@ end)
 
 Section:NewToggle("Farm Mob", "", function(t)
     _G.Mob = t
-        game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies[Mob].HumaniodRootPart.CFrame * CFrame.new(0,0,3)
+        game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies.HumaniodRootPart.CFrame * CFrame.new(0,0,3)
     end)
 Section:NewToggle("Kill Aura", "kill aura mob", function(v)
     _G.Raids = v
