@@ -51,6 +51,14 @@ pairs(game:GetService("Workspace").Enemies:GetChildren()) do
 
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto Farm")
+Mob = {}
+for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+    table.insert(Mob,v.Name) 
+end
+local drop = Section:NewDropdown("Select Mob", "Click To Select", Mob, function(t)
+   _G.TPMob = t
+end)
+
 Section:NewToggle("Kill Aura", "kill aura mob", function(v)
     _G.Raids = v
 end)
@@ -61,7 +69,7 @@ Section:NewToggle("Hitbox Mob", "hitbox mob", function(v)
 spawn(function()
 while wait() do
             pcall(function()
-                    if _G.AngryBob then
+                    if _G.TPMob then
 game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies["Lv2 Angry Bob"].HumanoidRootPart.CFrame 
                 * New.CFrame(0,0,-5)
             end
@@ -72,5 +80,5 @@ game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Wo
 local Tab = Window:NewTab("Auto Farm")
 local Section = Tab:NewSection("List Mob")
 Section:NewToggle("Lv2 Angry Bob", "", function(V)
-        _G.AngryBob = V
+        _G.TPMob = V
     end)
