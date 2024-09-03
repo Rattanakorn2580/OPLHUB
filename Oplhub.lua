@@ -70,8 +70,8 @@ spawn(function()
 while wait() do
             pcall(function()
                     if _G.TPMob then
-game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies["Lv2 Angry Bob"].HumanoidRootPart.CFrame 
-                * New.CFrame(0,0,-5)
+game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:FindChildren("Workspace").Enemies["Lv2 Angry Bob"].HumanoidRootPart.CFrame 
+                * New.CFrame(0,0-5)
             end
         end)
     end
