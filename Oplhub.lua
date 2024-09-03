@@ -61,7 +61,7 @@ end)
 
 Section:NewToggle("Auto Farm", "", function(t)
     _G.TPMob = t
-        game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies["Lv2 Angry Bob"].HumaniodRootPart.CFrame
+        game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies[Select].HumaniodRootPart.CFrame
     end)
 Section:NewToggle("Kill Aura", "kill aura mob", function(v)
     _G.Raids = v
