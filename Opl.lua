@@ -27,13 +27,14 @@ Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Toggle.Position = UDim2.new(0, 0, 0.454706937, 0) 
 Toggle.Size = UDim2.new(0, 90, 0, 38) 
 Toggle.Font = Enum.Font.SourceSans 
-Toggle.Text = "เปิด/ปิด ฟาม" 
+Toggle.Text = "Turn/off" 
 Toggle.TextColor3 = Color3.fromRGB(248, 248, 248) 
 Toggle.TextSize = 23.000 
 Toggle.Draggable = true 
 Toggle.MouseButton1Click:connect(function() 
 Library:ToggleUI() 
 end)
+
 spawn(function()
         while wait() do
             pcall(function()
@@ -56,3 +57,17 @@ end)
 Section:NewToggle("Hitbox Mob", "hitbox mob", function(v)
         _G.HitMob = v
     end)
+
+local Tab = Window:NewTab("Auto Farm")
+local Section = Tab:NewSection("List Mob")
+Section:NewToggle("Lv2 Angry Bob", "", function(V)
+        _G.AutoFarm = V
+spawn(function)
+if _G.AutoFarm then
+while wait() do
+pcall(function)
+game.Players.LocalPlayer.HumaniodRootPart.CFrame = game.workspace.Enemies["Lv2 Angry Bob"].HumaniodRootPart.CFrame * New.CFrame(0,0,-5)
+            end
+        end
+    end
+    end
