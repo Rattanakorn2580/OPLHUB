@@ -61,7 +61,7 @@ end)
 
 Section:NewToggle("Auto Farm", "", function(t)
     _G.TPMob = t
-    game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies[].HumanoidRootPart.CFrame
+    game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies[SelectMob].HumanoidRootPart.CFrame
 end)
 
 Section:NewToggle("Kill Aura", "kill aura mob", function(v)
