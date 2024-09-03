@@ -59,37 +59,21 @@ local drop = Section:NewDropdown("Select Mob", "Click To Select", Mob, function(
    _G.TPMob = t
 end)
 
-spawn(function()
-while wait() do
-            pcall(function()
-                    if _G.TPMob then
-game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:FindChildren("Workspace").Enemies[Select].HumanoidRootPart.CFrame 
-                * New.CFrame(0,0-5)
-            end
-        end)
-    end
-    end)
 Section:NewToggle("Auto Farm", "", function(t)
     _G.TPMob = t
 end)
 
-Section:NewToggle("Kill Aura", "kill aura mob", function(v)
-    _G.Raids = v
-end)
-
 spawn(function()
 while wait() do
             pcall(function()
                     if _G.TPMob then
-game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:FindChildren("Workspace").Enemies["Lv2 Angry Bob"].HumanoidRootPart.CFrame 
+game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies[Select].HumanoidRootPart.CFrame 
                 * New.CFrame(0,0-5)
             end
         end)
     end
     end)
 
-local Tab = Window:NewTab("Auto Farm")
-local Section = Tab:NewSection("List Mob")
-Section:NewToggle("Lv2 Angry Bob", "", function(V)
-        _G.TPMob = V
-    end)
+Section:NewToggle("Kill Aura", "kill aura mob", function(v)
+    _G.Raids = v
+end)
