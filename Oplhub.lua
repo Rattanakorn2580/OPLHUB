@@ -56,12 +56,12 @@ for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
     table.insert(Mob,v.Name) 
 end
 local drop = Section:NewDropdown("Select Mob", "Click To Select", Mob, function(t)
-   _G.TPMob = t
+   _G.Mob = t
 end)
 
-Section:NewToggle("Auto Farm", "", function(t)
-    _G.TPMob = t
-        game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies[Select].HumaniodRootPart.CFrame
+Section:NewToggle("Farm Mob", "", function(t)
+    _G.Mob = t
+        game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies[Mob].HumaniodRootPart.CFrame * CFrame.new(0,0,3)
     end)
 Section:NewToggle("Kill Aura", "kill aura mob", function(v)
     _G.Raids = v
