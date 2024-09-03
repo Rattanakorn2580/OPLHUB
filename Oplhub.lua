@@ -58,16 +58,19 @@ Section:NewToggle("Hitbox Mob", "hitbox mob", function(v)
         _G.HitMob = v
     end)
 
+spawn(function()
+if _G.AngryBob then
+while wait() do
+pcall(function()
+game.Players.LocalPlayer.Charecter.HumaniodRootPart.CFrame = game:GetService("Workspace").Enemies["Lv2 Angry Bob"].HumanoidRootPart.CFrame 
+                 New.CFrame(0,0,-5)
+            end
+        end)
+    end
+    end)
+
 local Tab = Window:NewTab("Auto Farm")
 local Section = Tab:NewSection("List Mob")
 Section:NewToggle("Lv2 Angry Bob", "", function(V)
-        _G.AutoFarm = V
-spawn(function)
-if _G.AutoFarm then
-while wait() do
-pcall(function)
-game.Players.LocalPlayer.HumaniodRootPart.CFrame = game.workspace.Enemies["Lv2 Angry Bob"].HumaniodRootPart.CFrame * New.CFrame(0,0,-5)
-            end
-        end
-    end
-    end
+        _G.AngryBob = V
+    end)
