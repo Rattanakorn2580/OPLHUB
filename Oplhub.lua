@@ -58,13 +58,13 @@ end
 local drop = Section:NewDropdown("Select Mob", "Click To Select", Mob, function(t)
    _G.TPMob = t
 end)
+Section:NewToggle("Auto Farm", "", function(t)
+    _G.TPMob = t
+end)
 
 Section:NewToggle("Kill Aura", "kill aura mob", function(v)
     _G.Raids = v
 end)
-Section:NewToggle("Hitbox Mob", "hitbox mob", function(v)
-        _G.HitMob = v
-    end)
 
 spawn(function()
 while wait() do
