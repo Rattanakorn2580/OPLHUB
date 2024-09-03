@@ -67,3 +67,7 @@ end)
 Section:NewToggle("Kill Aura", "kill aura mob", function(v)
     _G.Raids = v
 end)
+Section:NewToggle("HitBox", "", function(v)
+    _G.HitBox = v
+end)
+
